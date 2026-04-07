@@ -2,7 +2,7 @@
 
 # 🎵 My Heart Will Go On ❤️ Hand Gesture Music Instrument
 
-### Play the Titanic theme with your bare hands. No keyboard, no controller — just a webcam.
+### Play the Titanic theme with your bare hands. No keyboard, no controller; just a webcam.
 
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES_Modules-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand_Tracking-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker)
