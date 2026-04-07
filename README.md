@@ -5,8 +5,6 @@
 ### Play the Titanic theme with your bare hands. No keyboard, no controller — just a webcam.
 
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES_Modules-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Three.js](https://img.shields.io/badge/Three.js-0.161.0-000000?style=for-the-badge&logo=threedotjs&logoColor=white)](https://threejs.org/)
-[![Tone.js](https://img.shields.io/badge/Tone.js-Audio_Synthesis-F734D7?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDNMMSAyMWgyMkwxMiAzeiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=&logoColor=white)](https://tonejs.github.io/)
 [![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand_Tracking-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
