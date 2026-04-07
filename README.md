@@ -10,14 +10,10 @@
 
 
 
-<div align="center"> <img src="https://raw.githubusercontent.com/amerob/GestureSynth/main/assets/gesturesynth.gif" alt="GestureSynth demo" width="800"> </div>
 <br>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<!-- REPLACE THE PLACEHOLDER BELOW WITH AN ACTUAL PROJECT SCREENSHOT -->
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 
-<img src="assets/demo.png" alt="GestureSynth — Hand Gesture Music Instrument Demo" width="720">
+<div align="center"> <img src="https://raw.githubusercontent.com/amerob/GestureSynth/main/assets/gesturesynth.gif" alt="GestureSynth demo" width="800"> </div>
 
 <br>
 
