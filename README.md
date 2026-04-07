@@ -26,7 +26,7 @@
 
 A real-time, browser-based hand gesture instrument that plays **"My Heart Will Go On" by Celine Dion** (E Major, 56 BPM). Each hand controls a different musical layer — one drives the melody and synth switching, the other triggers a drum machine — all powered by computer vision running entirely in the browser.
 
----
+
 
 ## ✋ Gesture Controls
 
