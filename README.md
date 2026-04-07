@@ -17,7 +17,6 @@
 
 <br>
 
-[**View on GitHub →**](https://github.com/amerob/GestureSynth)
 
 </div>
 
