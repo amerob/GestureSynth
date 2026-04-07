@@ -1,30 +1,52 @@
-# My Heart Will Go On — Hand Gesture Music Instrument
+<div align="center">
 
-> Play the Titanic theme with your bare hands. No keyboard, no controller — just a webcam.
+# 🎵 My Heart Will Go On — Hand Gesture Music Instrument
 
-**[View on GitHub](https://github.com/amerob/GestureSynth)**
+### Play the Titanic theme with your bare hands. No keyboard, no controller — just a webcam.
 
-<img src="assets/demo.png" alt="Gesture Music screenshot">
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES_Modules-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Three.js](https://img.shields.io/badge/Three.js-0.161.0-000000?style=for-the-badge&logo=threedotjs&logoColor=white)](https://threejs.org/)
+[![Tone.js](https://img.shields.io/badge/Tone.js-Audio_Synthesis-F734D7?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDNMMSAyMWgyMkwxMiAzeiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=&logoColor=white)](https://tonejs.github.io/)
+[![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand_Tracking-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+
+<br>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- REPLACE THE PLACEHOLDER BELOW WITH AN ACTUAL PROJECT SCREENSHOT -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+
+<img src="assets/demo.png" alt="GestureSynth — Hand Gesture Music Instrument Demo" width="720">
+
+<br>
+
+[**View on GitHub →**](https://github.com/amerob/GestureSynth)
+
+</div>
 
 ---
 
-## What It Does
+## 🎯 Overview
 
-Real-time hand gesture instrument that plays **"My Heart Will Go On" by Celine Dion** (E Major, 56 BPM). Each hand controls a different musical layer:
+A real-time, browser-based hand gesture instrument that plays **"My Heart Will Go On" by Celine Dion** (E Major, 56 BPM). Each hand controls a different musical layer — one drives the melody and synth switching, the other triggers a drum machine — all powered by computer vision running entirely in the browser.
+
+---
+
+## ✋ Gesture Controls
 
 | Hand | Role | Gesture |
-|------|------|---------|
+|:----:|:----:|---------|
 | **Hand 1** | Melody on/off + volume | Raise hand → melody starts · Pinch → volume · Fist → switch synth |
-| **Hand 2** | Drum machine | ☝ Index=Kick · ✌ Middle=Snare · 💍 Ring=Hi-Hat · 🤙 Pinky=Clap |
+| **Hand 2** | Drum machine | ☝️ Index = Kick · ✌️ Middle = Snare · 💍 Ring = Hi-Hat · 🤙 Pinky = Clap |
 
 ---
 
-## Features
+## ✨ Features
 
-- **Exact melody transcription** — 16-bar verse→chorus loop via `Tone.Part` with bar:beat:sixteenth timestamps
+- **Exact melody transcription** — 16-bar verse → chorus loop via `Tone.Part` with `bar:beat:sixteenth` timestamps
 - **3 FM synth presets** — Strings, Grand Piano, Music Box (tuned for Titanic)
-- **Sample-accurate scheduling** — audio decoupled from `requestAnimationFrame` via AudioContext clock
-- **Gesture smoothing** — exponential moving average (α=0.4) on all 21 landmarks per frame
+- **Sample-accurate scheduling** — audio decoupled from `requestAnimationFrame` via `AudioContext` clock
+- **Gesture smoothing** — exponential moving average (α = 0.4) on all 21 landmarks per frame
 - **3D waveform visualizer** — custom GLSL neon-glow ribbon mesh reacting to audio
 - **16-step drum sequencer** — gentle romantic ballad pattern, gesture-activated
 - **Neon cyberpunk game HUD** — score, combo multiplier, energy meter, synth panel
@@ -32,42 +54,42 @@ Real-time hand gesture instrument that plays **"My Heart Will Go On" by Celine D
 
 ---
 
-## How to Run
+## 🚀 Getting Started
 
 ES modules require an HTTP server (`file://` will not work).
 
 ```bash
-# Python (recommended)
+# Option 1 — Python (recommended)
 python -m http.server 8080
 # then open http://localhost:8080
 
-# Node.js
+# Option 2 — Node.js
 npx serve .
 ```
 
-Or use **VS Code Live Server** — right-click `index.html` → Open with Live Server.
+Or use **VS Code Live Server** — right-click `index.html` → *Open with Live Server*.
 
-> Chrome or Edge recommended. Allow camera access when prompted.
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Hand tracking | MediaPipe Tasks Vision 0.10.14 (GPU delegate) |
-| Audio synthesis | Tone.js (FMSynth, Part, Sequence, Reverb, FeedbackDelay) |
-| 3D rendering | Three.js 0.161.0 (OrthographicCamera, custom ShaderMaterial) |
-| Shaders | Custom GLSL — analytical neon glow without post-processing |
-| Fonts | Orbitron + Share Tech Mono (Google Fonts) |
-| Language | Vanilla JS (ES Modules), HTML5, CSS3 |
+> **Note:** Chrome or Edge recommended. Allow camera access when prompted.
 
 ---
 
-## Project Structure
+## 🛠️ Tech Stack
+
+| Layer | Technology | |
+|:------|:-----------|:-:|
+| Hand tracking | MediaPipe Tasks Vision 0.10.14 (GPU delegate) | ![MediaPipe](https://img.shields.io/badge/-MediaPipe-4285F4?style=flat-square&logo=google&logoColor=white) |
+| Audio synthesis | Tone.js (FMSynth, Part, Sequence, Reverb, FeedbackDelay) | ![Tone.js](https://img.shields.io/badge/-Tone.js-F734D7?style=flat-square) |
+| 3D rendering | Three.js 0.161.0 (OrthographicCamera, custom ShaderMaterial) | ![Three.js](https://img.shields.io/badge/-Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white) |
+| Shaders | Custom GLSL — analytical neon glow without post-processing | ![GLSL](https://img.shields.io/badge/-GLSL-5586A4?style=flat-square&logo=opengl&logoColor=white) |
+| Fonts | Orbitron + Share Tech Mono | ![Google Fonts](https://img.shields.io/badge/-Google_Fonts-4285F4?style=flat-square&logo=googlefonts&logoColor=white) |
+| Language | Vanilla JS (ES Modules), HTML5, CSS3 | ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) |
+
+---
+
+## 📁 Project Structure
 
 ```
-musicAppregator/
+GestureSynth/
 ├── index.html              # Entry point — importmap + full game HUD
 ├── main.js                 # Bootstrap
 ├── game.js                 # Core: hand tracking, Three.js scene, gestures
@@ -85,30 +107,40 @@ musicAppregator/
 
 ---
 
-## Music Configuration
+## 🎶 Music Configuration
 
 | Setting | Value |
-|---------|-------|
+|:--------|:------|
 | Song | My Heart Will Go On — Celine Dion |
 | Key | E Major |
 | BPM | 56 |
 | Structure | Verse (bars 0–3) → Chorus (bars 4–14) → Loop |
-| Reverb | 9s decay, 90% wet |
+| Reverb | 9 s decay, 90 % wet |
 | Drum pattern | Sparse ballad — kick on beats 1 & 3 |
 
 ---
 
-## Key Technical Challenges
+## 🧩 Key Technical Challenges
 
-- **Landmark jitter** → EMA smoothing (α=0.4) on all 21 keypoints per frame
-- **CSS crop misalignment** → visible video region computed and used for coordinate remapping
-- **JS timing non-determinism** → all audio scheduled against `AudioContext.currentTime`, not rAF
-- **Exact melody** → `Tone.Part` with bar:beat:sixteenth timing, not generative patterns
+| Challenge | Solution |
+|:----------|:---------|
+| Landmark jitter | EMA smoothing (α = 0.4) on all 21 keypoints per frame |
+| CSS crop misalignment | Visible video region computed and used for coordinate remapping |
+| JS timing non-determinism | All audio scheduled against `AudioContext.currentTime`, not rAF |
+| Exact melody reproduction | `Tone.Part` with `bar:beat:sixteenth` timing, not generative patterns |
 
-See [explanation.md](explanation.md) for the full technical breakdown.
+> See [`explanation.md`](explanation.md) for the full technical breakdown.
 
 ---
 
-## Author
+## 👤 Author
 
-**Amer** — [github.com/amerob/GestureSynth](https://github.com/amerob/GestureSynth)
+**Amer** · [github.com/amerob](https://github.com/amerob)
+
+---
+
+<div align="center">
+
+*Built with* ❤️ *and bare hands*
+
+</div>
