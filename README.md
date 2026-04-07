@@ -8,6 +8,9 @@
 [![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand_Tracking-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
+
+
+<div align="center"> <img src="https://raw.githubusercontent.com/amerob/GestureSynth/main/assets/gesturesynth.gif" alt="GestureSynth demo" width="800"> </div>
 <br>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
