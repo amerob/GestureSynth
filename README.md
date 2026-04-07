@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎵 My Heart Will Go On — Hand Gesture Music Instrument
+# 🎵 My Heart Will Go On ❤️ Hand Gesture Music Instrument
 
 ### Play the Titanic theme with your bare hands. No keyboard, no controller — just a webcam.
 
