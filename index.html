@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Heart Will Go On — Gesture Music</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <meta name="title"       content="SYNTH JAM">
+  <meta name="description" content="Gesture-controlled synthesizer and drum machine">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three":  "https://esm.sh/three@0.161.0?dev",
+        "three/": "https://esm.sh/three@0.161.0&dev/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================
+       LOADING SCREEN
+       ========================================== -->
+  <div id="loading-screen">
+    <div class="loading-logo">♥ TITANIC</div>
+    <div class="loading-title">Loading My Heart Will Go On</div>
+    <div class="loading-bar-track">
+      <div class="loading-bar-fill"></div>
+    </div>
+    <div class="loading-status" id="loading-status-text">Loading hand tracking model...</div>
+  </div>
+
+  <!-- ==========================================
+       INTRO / SPLASH SCREEN
+       ========================================== -->
+  <div id="intro-screen" class="hidden">
+    <div class="intro-title">MY HEART</div>
+    <div class="intro-subtitle">Will Go On · Celine Dion · Titanic</div>
+    <div class="intro-divider"></div>
+
+    <div class="intro-controls">
+      <div class="intro-ctrl-item">
+        <span class="intro-ctrl-hand">🖐</span>
+        <div class="intro-ctrl-desc">
+          <strong>Hand 1 — Melody</strong>
+          Move up/down → pitch<br>
+          Pinch fingers → volume<br>
+          Make fist → change synth
+        </div>
+      </div>
+      <div class="intro-ctrl-item">
+        <span class="intro-ctrl-hand">✋</span>
+        <div class="intro-ctrl-desc">
+          <strong>Hand 2 — Drums</strong>
+          ☝ Index → Kick<br>
+          ✌ Middle → Snare<br>
+          💍 Ring → Hi-Hat &nbsp;· &nbsp;🤙 Pinky → Clap
+        </div>
+      </div>
+    </div>
+
+    <button class="intro-start-btn" id="start-btn">▶ &nbsp;ENTER</button>
+    <div class="intro-version">Built by Amer &nbsp;·&nbsp; github.com/amerob/GestureSynth &nbsp;·&nbsp; WebGL · Web Audio · MediaPipe</div>
+  </div>
+
+  <!-- ==========================================
+       SCANLINES + CORNER DECORATIONS
+       ========================================== -->
+  <div id="scanlines"></div>
+  <div class="corner-decoration top-left"></div>
+  <div class="corner-decoration top-right"></div>
+  <div class="corner-decoration bottom-left"></div>
+  <div class="corner-decoration bottom-right"></div>
+
+  <!-- ==========================================
+       MAIN GAME CONTAINER
+       ========================================== -->
+  <div id="renderDiv">
+
+    <!-- ── TOP HUD BAR ── -->
+    <div id="hud-top">
+
+      <!-- Synth Panel (left) -->
+      <div id="synth-panel">
+        <div class="hud-label">Synthesizer</div>
+        <div id="synth-presets">
+          <div class="synth-dot active" data-index="0">1</div>
+          <div class="synth-dot"        data-index="1">2</div>
+          <div class="synth-dot"        data-index="2">3</div>
+        </div>
+        <div id="synth-name">SINE CLEAN</div>
+      </div>
+
+      <!-- Game Title (center) -->
+      <div id="game-title">
+        <h1>♥ MY HEART WILL GO ON</h1>
+      </div>
+
+      <!-- Score Panel (right) -->
+      <div id="score-panel">
+        <div class="hud-label">Score</div>
+        <div id="score-value">000000</div>
+        <div id="combo-display">x1 COMBO</div>
+      </div>
+
+    </div><!-- /hud-top -->
+
+    <!-- ── NOTIFICATION AREA (center pop-ups) ── -->
+    <div id="notification-area"></div>
+
+    <!-- ── HAND STATUS PANELS ── -->
+    <div id="hand1-status">
+      <div class="hand-status-title">◎ Melody Hand</div>
+      <div class="hand-note" id="hand1-note">—</div>
+      <div class="hand-vol"  id="hand1-vol">VOL —</div>
+    </div>
+
+    <div id="hand2-status">
+      <div class="hand-status-title">Drum Hand ◎</div>
+      <div class="hand-drums" id="hand2-drums">—</div>
+    </div>
+
+    <!-- ── BOTTOM HUD BAR ── -->
+    <div id="hud-bottom">
+
+      <!-- Energy bar -->
+      <div id="energy-bar-container">
+        <div class="hud-label">Energy</div>
+        <div id="energy-bar-track">
+          <div id="energy-bar-fill"></div>
+        </div>
+      </div>
+
+      <!-- Quick controls reference -->
+      <div id="controls-ref">
+        <div class="ctrl-item ctrl-hand1">
+          <div class="ctrl-icon">↕</div>
+          <span>pitch</span>
+        </div>
+        <div class="ctrl-item ctrl-hand1">
+          <div class="ctrl-icon">👌</div>
+          <span>vol</span>
+        </div>
+        <div class="ctrl-item ctrl-hand1">
+          <div class="ctrl-icon">✊</div>
+          <span>synth</span>
+        </div>
+        <div class="ctrl-item ctrl-hand2">
+          <div class="ctrl-icon">☝</div>
+          <span>kick</span>
+        </div>
+        <div class="ctrl-item ctrl-hand2">
+          <div class="ctrl-icon">✌</div>
+          <span>snare</span>
+        </div>
+        <div class="ctrl-item ctrl-hand2">
+          <div class="ctrl-icon">💍</div>
+          <span>hihat</span>
+        </div>
+      </div>
+
+    </div><!-- /hud-bottom -->
+
+    <!-- Author credit -->
+    <div id="author-credit">Built by Amer &nbsp;·&nbsp; <a href="https://github.com/amerob/GestureSynth" target="_blank">github.com/amerob/GestureSynth</a></div>
+
+  </div><!-- /renderDiv -->
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
