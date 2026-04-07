@@ -139,8 +139,3 @@ GestureSynth/
 
 ---
 
-<div align="center">
-
-*Built with* ❤️ *and bare hands*
-
-</div>
